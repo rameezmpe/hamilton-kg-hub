@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Alexander Hamilton Kindergarten Hub – All Links in One Place</title>
+<meta name="description" content="One dashboard with all kindergarten websites, menus, calendars and contacts." />
+<link rel="stylesheet" href="styles.css" />
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap wide topbar-inner">
+      <div class="brand">
+        <div class="logo">🎒</div>
+        <div>
+          <h1>Alexander Hamilton Kindergarten Hub</h1>
+          <p>All important links in one place</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap wide">
+    <div class="layout">
+      <!-- LEFT: quick links -->
+      <div class="apps-col" id="appsCol">
+        <div class="drawer-peek" id="drawerPeek">
+          <div class="dragzone" id="drawerHandle" role="button" tabindex="0" aria-expanded="false" aria-controls="appsSection">
+            <span class="grabber"></span>
+            <span class="peek-label">🔖 <strong>Quick Links</strong> <span id="peekCount" class="count"></span> – <span id="peekHint">swipe up for all ↑</span></span>
+          </div>
+          <div class="peek-search">
+            <input id="search" type="search" placeholder="🔍 Search – e.g. meal, HSA, pizza…" autocomplete="off" />
+          </div>
+        </div>
+        <div class="drawer-body" id="drawerBody">
+          <section class="controls">
+            <div class="filters-row">
+              <div id="categoryChips" class="chips"></div>
+            </div>
+            <div class="filters-row secondary">
+              <span id="count" class="count"></span>
+            </div>
+          </section>
+
+          <section id="appsSection">
+            <h2>🔖 Quick Links</h2>
+            <div id="grid" class="grid"></div>
+            <div id="empty" class="empty hidden">
+              No links found. Try clearing search or filters.
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- RIGHT: calendar -->
+      <aside class="cal-col" id="calCol">
+        <div class="section-head">
+          <h2>📅 Kindergarten dates</h2>
+          <span id="eventCount" class="count"></span>
+        </div>
+        <p class="hint">Kindergarten-only. Past dates hidden.</p>
+        <div id="events" class="events"></div>
+        <button id="moreEvents" class="btn small">Show all dates ↓</button>
+      </aside>
+    </div>
+
+    <footer>
+      <p>Tip: Add this page to your phone home screen for one-tap access.</p>
+    </footer>
+  </main>
+
+<script src="links.js"></script>
+<script src="events.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
