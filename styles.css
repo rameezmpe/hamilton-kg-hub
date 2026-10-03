@@ -50,6 +50,7 @@ h2 { margin:0; font-size:19px; }
 .hidden { display:none; }
 #moreEvents { margin-top:10px; }
 footer { color:var(--muted); font-size:13px; text-align:center; padding:28px 0 40px; }
+footer .disclaimer { font-size:12px; opacity:.85; margin-top:6px; }
 
 /* ---- Desktop: apps left, calendar right ---- */
 .layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px; align-items:start; }

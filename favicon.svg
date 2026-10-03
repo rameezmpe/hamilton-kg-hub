@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#2a7a4b"/>
+  <rect x="64" y="64" width="384" height="384" rx="84" fill="#f7f5ef"/>
+  <text x="256" y="268" text-anchor="middle" dominant-baseline="central"
+        font-family="DejaVu Sans, Liberation Sans, Noto Sans, sans-serif"
+        font-weight="bold" font-size="210" fill="#2a7a4b">H</text>
+  <text x="256" y="392" text-anchor="middle" dominant-baseline="central"
+        font-family="DejaVu Sans, Liberation Sans, Noto Sans, sans-serif"
+        font-weight="bold" font-size="64" letter-spacing="10" fill="#777777">KG</text>
+</svg>
