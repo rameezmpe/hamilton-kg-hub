@@ -1,29 +1,48 @@
-# Kindergarten Hub
+# Hamilton KG Hub
 
-One place for all kindergarten links – open on phone, share with other parents.
+One page for Alexander Hamilton kindergarten families: quick links on one
+side, kindergarten dates on the other. Phone-friendly, shareable.
 
-No build step. Just 4 files: `index.html`, `styles.css`, `app.js`, `links.js`.
+- **Live:** https://hamilton-kg-hub.vercel.app
+- **Code:** https://github.com/rameezmpe/hamilton-kg-hub
 
-## 1. Edit your links
-Open `links.js` and replace the example URLs with your real ones.
+No build step, no framework — plain `index.html` + `styles.css` + `app.js`
+plus two data files (`links.js`, `events.js`).
 
-## 2. Host for free (pick one, 2 minutes)
+## What's inside
 
-**Easiest – Netlify Drop:**
-1. Go to https://app.netlify.com/drop
-2. Drag the `kindergarten-dashboard` folder onto the page
-3. You get a link like `https://kindergarten-hub-123.netlify.app` – share it, add to home screen.
+- **Quick Links** — bookmarks for Schoology, Genesis Parent Portal,
+  Online Meal Order, Hamilton School Webpage, Hamilton HSA, Glenrock
+  Community School. Search + category chips filter them.
+- **Kindergarten dates** — school calendar filtered to KG-relevant events
+  (closures, half-days, family events). Past dates are hidden automatically.
+- **Mobile layout** — calendar on top, links in a swipe-up drawer that rests
+  on handle + search. Pull down at the top of the list to close it.
 
-**Alternative – GitHub Pages:**
-1. Create free GitHub repo, upload these 4 files
-2. Settings → Pages → Deploy from branch → main / root
-3. Share the `https://YOURNAME.github.io/REPO` link.
+## Add or change a link
 
-**Alternative – Cloudflare / Vercel / itty.bitty:** same – just upload static files.
+Edit `links.js`, copy a block, fill in `title`, `url`, `description`,
+`category`, `icon`. Commit and redeploy (below).
 
-## 3. Share
-- Send link via WhatsApp / parent group
+## Refresh the calendar
+
+`events.js` was generated from the school's `.ics` file. For a new school
+year, re-import the new `.ics` keeping the same `{ date, time, title, tag }`
+shape and the kindergarten tagging, then redeploy.
+
+## Deploy
+
+```bash
+npx vercel --prod --yes
+# then re-point the public address at the new deployment:
+npx vercel alias <new-deployment-url> hamilton-kg-hub.vercel.app
+```
+
+(The public address is pinned manually, so the alias step is required after
+every production deploy.)
+
+## Share with parents
+
+- Send https://hamilton-kg-hub.vercel.app via WhatsApp / parent group
 - iPhone: Share → Add to Home Screen
 - Android: Menu → Add to Home screen
-
-All data is placeholder (`example.com`). Replace before sharing.
