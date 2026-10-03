@@ -6,7 +6,6 @@ or serve the folder statically.
 
 ## Locations
 
-- Local: `~/dev/projects/hamilton-kg-hub/`
 - Live: https://hamilton-kg-hub.vercel.app (public, no login wall)
 - GitHub: https://github.com/rameezmpe/hamilton-kg-hub (public, branch `main`)
 - Vercel project: `hamilton-kg-hub` (team `ramzwebdev-6345s-projects`)
