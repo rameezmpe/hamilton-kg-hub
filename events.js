@@ -1,5 +1,5 @@
 // Auto-generated from alexander_hamilton_elementary_school_events.ics
-// tag: kindergarten = relevant for K families (incl. whole-school closures), all = grade-specific / food / HSA
+// tag: kindergarten = relevant for K families (incl. whole-school closures + HSA General Meetings), all = grade-specific / food / other HSA
 const EVENTS = [
   { date: "2026-10-02", time: "11:30", title: "Frozen Friday", tag: "all" },
   { date: "2026-10-05", time: "", title: "Week of Respect", tag: "kindergarten" },
@@ -17,7 +17,7 @@ const EVENTS = [
   { date: "2026-10-20", time: "11:30", title: "Dumpling Day", tag: "all" },
   { date: "2026-10-20", time: "15:30", title: "Funtastic Science", tag: "all" },
   { date: "2026-10-23", time: "11:30", title: "Frozen Friday", tag: "all" },
-  { date: "2026-10-23", time: "09:00", title: "HSA General Meeting (Art Room)", tag: "all" },
+  { date: "2026-10-23", time: "09:00", title: "HSA General Meeting (Art Room)", tag: "kindergarten" },
   { date: "2026-10-24", time: "", title: "HSA Progressive Dinner", tag: "all" },
   { date: "2026-10-27", time: "15:30", title: "Funtastic Science", tag: "all" },
   { date: "2026-10-30", time: "14:30", title: "Halloween Parade", tag: "kindergarten" },
@@ -60,7 +60,7 @@ const EVENTS = [
   { date: "2027-01-15", time: "18:00", title: "HSA Bowling Night", tag: "all" },
   { date: "2027-01-18", time: "", title: "School Closed", tag: "kindergarten" },
   { date: "2027-01-19", time: "11:30", title: "Dumpling Day", tag: "all" },
-  { date: "2027-01-22", time: "14:00", title: "HSA General Meeting (Art Room)", tag: "all" },
+  { date: "2027-01-22", time: "14:00", title: "HSA General Meeting (Art Room)", tag: "kindergarten" },
   { date: "2027-01-26", time: "09:00", title: "4th & 5th Grade Winter Concert", tag: "kindergarten" },
   { date: "2027-02-01", time: "", title: "Science Week", tag: "kindergarten" },
   { date: "2027-02-02", time: "11:30", title: "Pizza Day", tag: "all" },
@@ -81,7 +81,7 @@ const EVENTS = [
   { date: "2027-03-09", time: "11:30", title: "Bagel Day", tag: "all" },
   { date: "2027-03-12", time: "11:30", title: "1st Grade Husky Cafe", tag: "kindergarten" },
   { date: "2027-03-16", time: "11:30", title: "Dumpling Day", tag: "all" },
-  { date: "2027-03-18", time: "09:00", title: "HSA General Meeting (Art Room)", tag: "all" },
+  { date: "2027-03-18", time: "09:00", title: "HSA General Meeting (Art Room)", tag: "kindergarten" },
   { date: "2027-03-19", time: "11:30", title: "Frozen Friday", tag: "all" },
   { date: "2027-03-22", time: "", title: "School Closed- Spring Break", tag: "kindergarten" },
   { date: "2027-04-02", time: "11:30", title: "Frozen Friday", tag: "all" },
@@ -89,7 +89,7 @@ const EVENTS = [
   { date: "2027-04-09", time: "15:30", title: "HSA All School Playdate", tag: "kindergarten" },
   { date: "2027-04-09", time: "14:30", title: "K & 1 Music Informance", tag: "kindergarten" },
   { date: "2027-04-13", time: "11:30", title: "Bagel Day", tag: "all" },
-  { date: "2027-04-15", time: "09:00", title: "HSA General Meeting (Art Room)", tag: "all" },
+  { date: "2027-04-15", time: "09:00", title: "HSA General Meeting (Art Room)", tag: "kindergarten" },
   { date: "2027-04-16", time: "", title: "Hamilton Multicultural Festival", tag: "kindergarten" },
   { date: "2027-04-20", time: "11:30", title: "Dumpling Day", tag: "all" },
   { date: "2027-04-23", time: "11:30", title: "Frozen Friday", tag: "all" },
@@ -114,7 +114,7 @@ const EVENTS = [
   { date: "2027-06-11", time: "11:30", title: "Frozen Friday", tag: "all" },
   { date: "2027-06-15", time: "11:30", title: "Dumpling Day", tag: "all" },
   { date: "2027-06-17", time: "09:30", title: "5th Grade Moving Up Ceremony", tag: "kindergarten" },
-  { date: "2027-06-18", time: "09:00", title: "HSA General Meeting (Art Room)", tag: "all" },
+  { date: "2027-06-18", time: "09:00", title: "HSA General Meeting (Art Room)", tag: "kindergarten" },
   { date: "2027-06-21", time: "", title: "Half Day Students", tag: "kindergarten" },
   { date: "2027-06-21", time: "11:30", title: "Pretzel Day", tag: "all" },
   { date: "2027-06-22", time: "", title: "Half Day Students", tag: "kindergarten" },
