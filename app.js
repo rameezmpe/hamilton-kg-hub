@@ -15,6 +15,11 @@ const EVENT_LIMIT = 15;
 
 const categories = ['All', ...new Set(LINKS.map(l => l.category))];
 
+function fmtTime(t) {
+  const [h, m] = t.split(':').map(Number);
+  return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h < 12 ? 'AM' : 'PM'}`;
+}
+
 function renderChips() {
   chipsEl.innerHTML = '';
   categories.forEach(cat => {
@@ -95,7 +100,7 @@ function renderEvents() {
     const label = d.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' });
     const div = document.createElement('div');
     div.className = 'event';
-    div.innerHTML = `<strong>${label}</strong><span>${e.title}${e.time ? ` <span class="etime">${e.time}</span>` : ''}</span>`;
+    div.innerHTML = `<strong>${label}</strong><span>${e.title}${e.time ? ` <span class="etime">${fmtTime(e.time)}</span>` : ''}</span>`;
     eventsEl.appendChild(div);
   });
 
