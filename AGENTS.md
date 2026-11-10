@@ -32,6 +32,25 @@ Calendar renders `tag === "kindergarten"` only. Regenerating from a new
 `.ics`? Keep the same tagging keywords (see git history of the generator
 one-liner) so the KG filter keeps working.
 
+Manual edits on top of the `.ics` (re-apply if you regenerate):
+- `2026-12-03` "Parent Teacher Conferences & Early Dismissal for Students"
+  (missing from the feed; Parent Hub lists Dec 2 & 3).
+- "Kindergarten Report Cards" on `2027-02-19` and `2027-06-22` (from HSA site).
+- HSA Bowling Night + Bingo Night retagged `kindergarten`.
+- Funtastic Science removed (KG eligibility unconfirmed).
+
+### Calendar display (`app.js`)
+
+- Dates use the parent's **local** date (`ymd()`), never `toISOString()` (UTC
+  would hide today's events after ~7 PM Eastern).
+- `eventKind()` styles rows by title: `^School Closed` → red `.closed`;
+  `Half Day` / `Early Dismissal` → amber `.early`, and untimed early rows show
+  `EARLY_DISMISSAL_TIME` ("12:33 PM", from the Parent Hub) as "dismissal".
+  Keep these title words if you rename events, or the colors stop applying.
+- **This week** banner (`#thisWeek`, `renderThisWeek()`): Mon–Fri of the
+  current week (Sat/Sun → "Next week"), KG events only, hidden when empty.
+  Closures/early dismissals are bolded in red/amber. Not affected by search.
+
 ## Conventions the owner chose (don't "fix" these unasked)
 
 - Section is called **Quick Links** (not Apps/Bookmarks).
