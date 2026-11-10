@@ -72,9 +72,58 @@ function renderGrid() {
   });
 }
 
+// Local date as YYYY-MM-DD (toISOString is UTC and would flip to tomorrow in the evening).
+function ymd(d) {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
 function todayStr() {
-  const d = new Date();
-  return d.toISOString().slice(0, 10);
+  return ymd(new Date());
+}
+
+const EARLY_DISMISSAL_TIME = '12:33 PM';
+function eventKind(e) {
+  if (/^school closed/i.test(e.title)) return 'closed';
+  if (/half day|early dismissal/i.test(e.title)) return 'early';
+  return '';
+}
+function eventTimeText(e) {
+  if (e.time) return fmtTime(e.time);
+  if (eventKind(e) === 'early') return `${EARLY_DISMISSAL_TIME} dismissal`;
+  return '';
+}
+
+// "This week" banner: Mon–Fri of the current week (or next week on weekends).
+function renderThisWeek() {
+  const el = document.getElementById('thisWeek');
+  if (!el) return;
+  const now = new Date();
+  const dow = now.getDay(); // 0 Sun … 6 Sat
+  const weekend = dow === 0 || dow === 6;
+  const start = new Date(now.getFullYear(), now.getMonth(), now.getDate() + (weekend ? (dow === 6 ? 2 : 1) : 0));
+  const friday = new Date(start.getFullYear(), start.getMonth(), start.getDate() + (5 - start.getDay()));
+  const from = ymd(start), to = ymd(friday);
+
+  const list = (typeof EVENTS !== 'undefined' ? EVENTS : [])
+    .filter(e => e.tag === 'kindergarten' && e.date >= from && e.date <= to)
+    .sort((a, b) => a.date.localeCompare(b.date) || (a.time || '').localeCompare(b.time || ''));
+
+  if (!list.length) { el.classList.add('hidden'); return; }
+
+  const byDay = new Map();
+  list.forEach(e => { if (!byDay.has(e.date)) byDay.set(e.date, []); byDay.get(e.date).push(e); });
+
+  const rows = [...byDay].map(([date, evs]) => {
+    const day = new Date(date + 'T00:00:00').toLocaleDateString(undefined, { weekday: 'short' });
+    const items = evs.map(e => {
+      const k = eventKind(e);
+      const t = k === 'early' ? ` (${EARLY_DISMISSAL_TIME})` : '';
+      return k ? `<b class="wk-${k}">${e.title}${t}</b>` : e.title;
+    }).join(' · ');
+    return `<li><span class="wk-day">${day}</span><span>${items}</span></li>`;
+  }).join('');
+
+  el.innerHTML = `<div class="week-title">${weekend ? 'Next week' : 'This week'}</div><ul>${rows}</ul>`;
+  el.classList.remove('hidden');
 }
 
 // Calendar: kindergarten dates ONLY (tag === 'kindergarten'), always.
@@ -99,8 +148,10 @@ function renderEvents() {
     const d = new Date(e.date + 'T00:00:00');
     const label = d.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' });
     const div = document.createElement('div');
-    div.className = /^school closed/i.test(e.title) ? 'event closed' : 'event';
-    div.innerHTML = `<strong>${label}</strong><span>${e.title}${e.time ? ` <span class="etime">${fmtTime(e.time)}</span>` : ''}</span>`;
+    const kind = eventKind(e);
+    const t = eventTimeText(e);
+    div.className = kind ? `event ${kind}` : 'event';
+    div.innerHTML = `<strong>${label}</strong><span>${e.title}${t ? ` <span class="etime">${t}</span>` : ''}</span>`;
     eventsEl.appendChild(div);
   });
 
@@ -225,3 +276,4 @@ moreBtn.addEventListener('click', () => { showAllEvents = !showAllEvents; render
 renderChips();
 renderGrid();
 renderEvents();
+renderThisWeek();

@@ -45,6 +45,22 @@ const LINKS = [
     icon: "🤝"
   },
   {
+    title: "HSA Year at a Glance",
+    url: "https://www.hamiltonhsa.org/Hln/custompage.cfm?cpid=5743",
+    description: "The HSA's full-year save-the-date calendar of school events.",
+    category: "General",
+    audience: "kindergarten",
+    icon: "🗓️"
+  },
+  {
+    title: "Hamilton Parent Hub",
+    url: "https://www.hamiltonhsa.org/Hln/custompage.cfm?cpid=6198",
+    description: "School's one-page guide: key dates, office numbers, policies.",
+    category: "General",
+    audience: "kindergarten",
+    icon: "📌"
+  },
+  {
     title: "Glenrock Community School",
     url: "https://www.grcsonline.com/o/gr/page/youth-enrichment-programs",
     description: "Youth enrichment programs and sign-ups.",
