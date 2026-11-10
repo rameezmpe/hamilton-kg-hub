@@ -26,6 +26,8 @@ or serve the folder statically.
 `"kindergarten"` on new entries for consistency.
 
 `events.js` entry shape: `{ date: "YYYY-MM-DD", time: "HH:MM"|"", title, tag }`.
+Store `time` as 24-hour (`"15:30"`) so sorting works; `fmtTime()` in `app.js`
+renders it as 12-hour (`3:30 PM`). Don't write 12-hour strings into `events.js`.
 Calendar renders `tag === "kindergarten"` only. Regenerating from a new
 `.ics`? Keep the same tagging keywords (see git history of the generator
 one-liner) so the KG filter keeps working.

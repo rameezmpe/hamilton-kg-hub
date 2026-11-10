@@ -32,6 +32,8 @@ h2 { margin:0; font-size:19px; }
 .events { display:grid; gap:8px; }
 .event { background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px 14px; display:flex; gap:12px; align-items:center; font-size:14px; }
 .event strong { white-space:nowrap; background:#eef6f0; padding:4px 8px; border-radius:8px; }
+.event.closed { background:#fdf0f0; border-color:#f1c9c9; color:#a32626; }
+.event.closed strong { background:#f9dede; }
 .event em { margin-left:auto; color:var(--muted); font-style:normal; font-size:12px; background:#f2f2f2; padding:3px 8px; border-radius:999px; }
 .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; text-decoration:none; color:inherit; display:flex; flex-direction:column; gap:8px; }

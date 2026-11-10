@@ -99,7 +99,7 @@ function renderEvents() {
     const d = new Date(e.date + 'T00:00:00');
     const label = d.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' });
     const div = document.createElement('div');
-    div.className = 'event';
+    div.className = /^school closed/i.test(e.title) ? 'event closed' : 'event';
     div.innerHTML = `<strong>${label}</strong><span>${e.title}${e.time ? ` <span class="etime">${fmtTime(e.time)}</span>` : ''}</span>`;
     eventsEl.appendChild(div);
   });
