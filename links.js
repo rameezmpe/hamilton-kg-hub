@@ -14,7 +14,7 @@ const LINKS = [
   },
   {
     title: "Genesis Parent Portal",
-    url: "https://parents.c3.genesisedu.net/wwrsd/sis/view?",
+    url: "https://parents.c3.genesisedu.net/glenrock/sis/view?gohome=true",
     description: "Grades, attendance, documents and school info.",
     category: "General",
     audience: "kindergarten",
